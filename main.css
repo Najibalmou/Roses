@@ -1,0 +1,300 @@
+body {
+    background: rgb(217, 187, 187);
+    padding: 0;
+    margin: 0;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul {
+    background: rgb(227, 167, 167);
+    border-radius: 20px;
+    list-style: none;
+    display: flex;
+}
+.nav {
+    padding: 30px;
+    text-align: center;
+    color: rgb(213, 64, 64);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px;
+}
+.money{
+    width: 90px;
+    height: 30px;
+}
+.pay{
+    text-align: center;
+}
+.bouquets{
+    color: rgb(232, 110, 110);
+    box-shadow: 0 0 10px rgb(232, 110, 110);
+}
+.nav:hover{
+    color: rgb(154, 8, 120);
+}
+button:hover{
+    background: rgb(213, 64, 64);
+    color: antiquewhite;
+}
+/* .navbar::after {
+    content: "";
+    position: absolute;
+    left: 95%; 
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    height: 607px;
+    background: rgb(237, 98, 98);
+} */
+
+.alldivs{
+    border: 2px solid rgb(237, 98, 98);
+    margin-top: 45px;
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    filter: drop-shadow(7px 7px 5px rgb(237, 98, 98));
+    background: rgb(227, 167, 167);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 80px;
+}
+.alldivs:hover{
+    background: rgb(223, 181, 181);
+}
+h3,p{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+button{
+    width: 90%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 9px;
+    background-color: rgb(227, 167, 167);
+    color: rgb(235, 18, 18);
+    font-weight: bold;
+    border: 2px solid rgb(237, 98, 98);
+}
+.img1{
+    border-radius: 10px;
+    width: 130px;
+    cursor: pointer;
+}
+.florist{
+    color: rgb(237, 98, 98);
+    text-align: center;
+    filter: drop-shadow(10px 7px 5px rgb(225, 142, 142));
+}
+.sec1{
+    background: linear-gradient(rgb(237, 98, 98),#292727);
+    border-radius: 0 0 20px 20px;
+}
+.sec2{
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+
+.footer{
+    background: linear-gradient(#996868, rgb(237, 98, 98));
+
+}
+.foo{
+    text-align: center;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+.scroll{
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: #ee5d5d;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    display: none;
+  }
+  .scroll-tray {
+    white-space: nowrap;
+  }
+  .scroll-tray div {
+    display: inline-block;
+  }
+
+  .scroll-tray img {
+    border-radius: 0.3rem;
+    margin: 7px 5px;
+    padding: 0;
+    width: 640px;
+  }
+
+  .scroll-holder {
+    overflow-x: hidden;
+  }
+
+  .scroll-holder .scroll-tray:first-child {
+    animation: scroll-tray-hero 180s linear infinite;
+  }
+
+  .scroll-holder .scroll-tray:last-child {
+    animation: scroll-tray-hero 140s linear infinite;
+  }
+
+  @keyframes scroll-tray-hero {
+    0% {
+      transform: translateX(0);
+    }
+
+    99.99% {
+      transform: translateX(-7098px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  .tooltip {
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(237, 98, 98);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* Ajoutez ces règles media queries à la fin de votre fichier CSS */
+
+/* Pour les écrans jusqu'à 600px de large */
+@media only screen and (max-width: 600px) {
+    .sec2 {
+        flex-direction: column;
+    }
+
+    .alldivs {
+        margin-left: 0;
+        margin-bottom: 20px;
+        width: 100%; 
+        margin: 0 0 20px;
+        margin-top: 15px;
+    }
+
+    .scroll {
+        right: 5px;
+    }
+    .navbar ul {
+        flex-direction: column;
+
+    }
+
+    .navbar ul li {
+        margin: 10px 90px;
+    }
+}
+
+/* Pour les écrans entre 601px et 900px de large */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    .sec2 {
+        flex-direction: column;
+    }
+
+    .alldivs {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Pour les écrans jusqu'à 600px de large */
+@media only screen and (max-width: 600px) {
+    .toggle-navbar-btn {
+        display: block; /* Affiche l'image sur les écrans plus petits */
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul {
+        flex-direction: column;
+    }
+
+    .nav {
+        margin: 10px 10px;
+        padding: 15px;
+    }
+
+    img {
+        margin-bottom: 10px;
+    }
+
+    .sec2 {
+        flex-direction: column;
+    }
+
+    .alldivs {
+        margin-left: 0;
+        margin-bottom: 20px;
+        width: 100%;
+        margin: 0 0 20px;
+        margin-top: 15px;
+    }
+
+    .scroll {
+        right: 5px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar ul li {
+        margin: 10px 90px;
+    }
+}
+
+/* Pour les écrans plus grands que 600px de large */
+@media only screen and (min-width: 601px) {
+    .toggle-navbar-btn {
+        display: none; /* Cache l'image sur les écrans plus grands */
+    }
+}
+
+
+/* Ajoutez ces règles dans la section style de votre fichier CSS */
+
+/* Pour les écrans jusqu'à 600px de large */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul {
+        flex-direction: column;
+    }
+
+    .nav {
+        margin: 10px 10px;
+        padding: 15px;
+    }
+
+    img {
+        margin-bottom: 10px;
+    }
+}

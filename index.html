@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Roses Store</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="EFM2023-RABAT.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- scroll btn -->
+    <section class="sec1">
+        <button class="scroll" id="scrollBtn">
+            <span><i class='bx bxs-to-top' style='color:#fffefe'></i></span>
+          </button>
+          <!-- navbar  -->
+          <img src="white menu.png" alt="burger_menu" width="60px" class="toggle-navbar-btn">
+    <div class="navbar">
+        <img src="fleur.png" alt="fleure" width="140px">
+        <ul>
+            <li><a href="#" class="nav">Accueil</a></li>
+            <li><a href="#" class="nav">Présentation</a></li>
+            <li><a href="#" class="nav">Bouquets de fleurs</a></li>
+            <li><a href="#" class="nav">Services</a></li>
+            <li><a href="#" class="nav">Contact</a></li>
+        </ul>
+    </div>
+    </section>
+    <!-- payment money change-->
+    <div class="welcome">
+        <h2 class="florist">FLORIST MOROCCO ONLINE - DELIVERY 7/7 - PERSONALI NOTE, CHOCOLATES ...</h2>
+    </div>
+    <div class="pay">
+       <h2 class="bouquets"><i>Our bouquets</i></h2> 
+       <img src="dec-pink.png" alt="dec-pink"><br>
+       <br>
+       <button class="money" onclick="changeToMad()">Dirhams</button>
+       <button class="money" onclick="changeToEuro()">Euros</button>
+       <button class="money" onclick="changeToDollar()">Dollars</button>
+    </div>
+    <!-- content -->
+    <section class="sec2">
+        <div class="alldivs">
+            <img src="fleur1.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
+            <h3>399 <span class="change">MAD</span></h3>
+            <button class="order">Order now</button>
+        </div>
+        <div class="alldivs">
+            <img src="fleur2.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
+            <h3>799 <span class="change">MAD</span></h3>
+            <button class="order">Order now</button>
+        </div>
+        <div class="alldivs">
+            <img src="fleur3.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
+            <h3>995 <span class="change">MAD</span></h3>
+            <button class="order">Order now</button>
+        </div>
+        <div class="alldivs">
+            <img src="fleur4.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
+            <h3>1079 <span class="change">MAD</span></h3>
+            <button class="order">Order now</button>
+        </div>
+    </section>
+    <section class="sec2">
+        <div class="alldivs">
+            <img src="fleur5.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
+            <h3>1499 <span class="change">MAD</span></h3>
+            <button class="order">Order now</button>
+        </div>
+        <div class="alldivs">
+            <img src="fleur6.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
+            <h3>669 <span class="change">MAD</span></h3>
+            <button class="order">Order now</button>
+        </div>
+        <div class="alldivs">
+            <img src="fleur7.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
+            <h3>859 <span class="change">MAD</span></h3>
+            <button class="order">Order now</button>
+        </div>
+        <div class="alldivs">
+            <img src="fleur8.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
+            <h3>749 <span class="change">MAD</span></h3>
+            <button class="order">Order now</button>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer"><h5 class="foo">© 2023 Flower ™ . All Rights Reserved.</h5></div>
+    </footer>
+
+    <!-- scripts -->
+    <!-- script change euro , mad & dollar -->
+    <script>
+        function changeToEuro() {
+            var elements = document.querySelectorAll('.change');
+            elements.forEach(function(element) {
+                element.innerHTML = "EURO";
+            });
+        }
+        function changeToMad() {
+            var elements = document.querySelectorAll('.change');
+            elements.forEach(function(element) {
+                element.innerHTML = "MAD";
+            });
+        }
+        function changeToDollar() {
+            var elements = document.querySelectorAll('.change');
+            elements.forEach(function(element) {
+                element.innerHTML = "USD";
+            });
+        }
+    </script>
+    
+    <!-- script of the show message -->
+    <script>
+    function showTooltip(imgElement) {
+        var tooltip = document.createElement('div');
+        tooltip.className = 'tooltip';
+        tooltip.innerHTML = 'Show';
+
+        var tooltipVisible = false;
+
+        imgElement.parentNode.appendChild(tooltip);
+
+        tooltip.addEventListener('click', function() {
+            tooltipVisible = !tooltipVisible;
+        });
+
+        imgElement.addEventListener('mouseleave', function() {
+            if (!tooltipVisible) {
+                tooltip.parentNode.removeChild(tooltip);
+            }
+        });
+    }
+</script>
+
+    
+    
+    
+    <script src="main.js"></script>
+
+
+
+
+
+<script>
+    $(document).ready(function() {
+        $(".toggle-navbar-btn").click(function() {
+            $(".navbar").toggle(); // Cette ligne affiche ou cache la barre de navigation
+        });
+    });
+</script>
+
+</body>
+</html>
