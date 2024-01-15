@@ -46,44 +46,44 @@
     <section class="sec2">
         <div class="alldivs">
             <img src="fleur1.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
-            <h3>399 <span class="change">MAD</span></h3>
+            <h3><span class="price">399</span> <span class="change">MAD</span></h3>
             <button class="order">Order now</button>
         </div>
         <div class="alldivs">
             <img src="fleur2.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
-            <h3>799 <span class="change">MAD</span></h3>
+            <h3><span class="price">799</span> <span class="change">MAD</span></h3>
             <button class="order">Order now</button>
         </div>
         <div class="alldivs">
             <img src="fleur3.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
-            <h3>995 <span class="change">MAD</span></h3>
+            <h3><span class="price">995</span> <span class="change">MAD</span></h3>
             <button class="order">Order now</button>
         </div>
         <div class="alldivs">
             <img src="fleur4.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
-            <h3>1079 <span class="change">MAD</span></h3>
+            <h3><span class="price">1079</span> <span class="change">MAD</span></h3>
             <button class="order">Order now</button>
         </div>
     </section>
     <section class="sec2">
         <div class="alldivs">
             <img src="fleur5.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
-            <h3>1499 <span class="change">MAD</span></h3>
+            <h3><span class="price">1499</span> <span class="change">MAD</span></h3>
             <button class="order">Order now</button>
         </div>
         <div class="alldivs">
             <img src="Fleur6.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
-            <h3>669 <span class="change">MAD</span></h3>
+            <h3><span class="price">669</span> <span class="change">MAD</span></h3>
             <button class="order">Order now</button>
         </div>
         <div class="alldivs">
             <img src="fleur7.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
-            <h3>859 <span class="change">MAD</span></h3>
+            <h3><span class="price">859</span> <span class="change">MAD</span></h3>
             <button class="order">Order now</button>
         </div>
         <div class="alldivs">
             <img src="fleur8.png" alt="flower" class="img1" onmouseover="showTooltip(this)">
-            <h3>749 <span class="change">MAD</span></h3>
+            <h3> <span class="price">749</span> <span class="change">MAD</span></h3>
             <button class="order">Order now</button>
         </div>
     </section>
@@ -94,27 +94,78 @@
     </footer>
 
     <!-- scripts -->
-    <!-- script change euro , mad & dollar -->
-    <script>
-        function changeToEuro() {
-            var elements = document.querySelectorAll('.change');
-            elements.forEach(function(element) {
-                element.innerHTML = "EURO";
-            });
+   <!-- scripts -->
+<!-- script change euro, mad & dollar -->
+<script>
+    var currencyChanged = false;
+
+    function changeToEuro() {
+        var elements = document.querySelectorAll('.change');
+        elements.forEach(function(element) {
+            element.innerHTML = "EURO";
+        });
+
+        // Update prices to Euro only if not already changed
+        if (!currencyChanged) {
+            updatePrices('Euro');
+            currencyChanged = true; // Set the flag to true after the first conversion
         }
-        function changeToMad() {
-            var elements = document.querySelectorAll('.change');
-            elements.forEach(function(element) {
-                element.innerHTML = "MAD";
-            });
+    }
+
+    function changeToMad() {
+        var elements = document.querySelectorAll('.change');
+        elements.forEach(function(element) {
+            element.innerHTML = "MAD";
+        });
+
+        // Restore original prices if currency was changed before
+        if (currencyChanged) {
+            restoreOriginalPrices();
+            currencyChanged = false; // Reset the flag after restoring original prices
         }
-        function changeToDollar() {
-            var elements = document.querySelectorAll('.change');
-            elements.forEach(function(element) {
-                element.innerHTML = "USD";
-            });
+    }
+
+    function changeToDollar() {
+        var elements = document.querySelectorAll('.change');
+        elements.forEach(function(element) {
+            element.innerHTML = "USD";
+        });
+
+        // Update prices to Dollar only if not already changed
+        if (!currencyChanged) {
+            updatePrices('Dollar');
+            currencyChanged = true; // Set the flag to true after the first conversion
         }
-    </script>
+    }
+
+    function updatePrices(currency) {
+        var priceElements = document.querySelectorAll('.price');
+        priceElements.forEach(function(priceElement) {
+            // Extract the numeric value from the price
+            var priceValue = parseInt(priceElement.textContent);
+
+            // Update the price based on the currency
+            if (currency === 'Euro') {
+                priceElement.textContent = priceValue / 10;
+            } else if (currency === 'Dollar') {
+                priceElement.textContent = priceValue / 10;
+            }
+        });
+    }
+
+    function restoreOriginalPrices() {
+        var originalPrices = [399, 799, 995, 1079, 1499, 669, 859, 749];
+        var priceElements = document.querySelectorAll('.price');
+
+        priceElements.forEach(function(priceElement, index) {
+            priceElement.textContent = originalPrices[index];
+        });
+    }
+</script>
+
+
+
+
     
     <!-- script of the show message -->
     <script>
